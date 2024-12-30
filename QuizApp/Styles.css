@@ -1,0 +1,238 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0; /* Removes default margins */
+  padding: 0; /* Removes default padding */
+  overflow: hidden; /* Prevents scrollbars on the entire page */
+  height: 100%; /* Ensures the body is the full height of the viewport */
+  box-sizing: border-box; /* Ensures proper box-sizing for all elements */
+}
+header {
+  background-color: #2f6ee2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+header h1 {
+  margin: 0; /* Remove the default margin on h1 */
+  font-weight: 300; /* Make the main header text thinner */
+}
+
+header h1 span {
+  font-weight: 900; /* Make the span text bold and thick */
+}
+
+header h1 + h1 {
+  margin-top: 0.5rem; /* Reduce space between the two h1 elements */
+  font-weight: 100; /* Apply thinner font weight for consistency */
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+#progress-bar-container {
+  width: 30%;
+  margin: 20px auto;
+  background-color: #f3f3f3;
+  border-radius: 82%;
+  height: 16px;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(to right, #1c6ad1, #49c681);
+  border-radius: 75px;
+}
+
+#quiz-container {
+  display: block;
+  margin: auto;
+  max-width: 700px;
+}
+#question-container {
+  display: block;
+  max-width: 700px;
+}
+#next-btn {
+  width: 40px; /* Adjust the width */
+  height: 40px; /* Adjust the height */
+  background-color: #6277e3;
+  color: white;
+  border: none;
+  border-radius: 50%; /* This makes the button circular */
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+  margin-left: 20px; /* Adds space on the left side of the next button */
+  transition: background-color 0.3s ease;
+}
+
+#prev-btn {
+  width: 40px; /* Adjust the width */
+  height: 40px; /* Adjust the height */
+  background-color: #6277e3;
+  color: white;
+  border: none;
+  border-radius: 50%; /* This makes the button circular */
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+  margin-right: 20px; /* Adds space on the right side of the prev button */
+  transition: background-color 0.3s ease;
+}
+
+/* Default background for desktop view */
+@media (min-width: 768px) {
+  #result-container {
+    background-image: url("MP34692_mer_images_3.jpg"); /* Desktop image */
+    background-size: auto 100%; /* Ensure the image is stretched horizontally */
+    background-position: center top; /* Align image to the top center */
+    background-attachment: fixed; /* Optional: Keeps the image fixed while scrolling */
+  }
+}
+
+/* Background for mobile view */
+@media (max-width: 767px) {
+  #result-container {
+    background-image: url("MP34692_i2_v2_m_q10_timer.jpg"); /* Mobile image */
+    background-size: auto 100%; /* Ensure the image is stretched horizontally */
+    background-position: center top; /* Align image to the top center */
+  }
+}
+
+.extra-text {
+  margin-top: -10px; /* Remove top margin */
+  margin-bottom: 5px; /* Reduce bottom margin */
+  padding: 0; /* Optional: Remove any padding */
+  font-size: 12px;
+}
+.extra-text1 {
+  margin-top: -15px; /* Remove top margin */
+  font-size: 12px;
+}
+#options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 2px;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 45%;
+  margin: -5px auto;
+  background-color: #fff;
+  border: 2px solid #5c5555;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 12px;
+  position: relative;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+label:hover {
+  background-color: #0fc4a0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  border-color: #49c681;
+  background-color: #0fc4a0;
+}
+
+input[type="radio"]:checked + label::after {
+  content: "✔";
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#result-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align elements to the top */
+  align-items: center; /* Center elements horizontally */
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#result-message {
+  font-size: 18px;
+  margin-bottom: 10px; /* Reduced space between the text and progress bar */
+  padding-top: 10px; /* Adds some space from the top */
+}
+
+.circular-progress {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.circular-progress svg {
+  width: 160px;
+  height: 160px;
+  transform: rotate(-90deg); /* Rotate to start the progress from the top */
+}
+
+.circular-progress circle {
+  fill: none;
+  stroke-width: 10;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440; /* Total circumference */
+  stroke-dashoffset: 440; /* Start fully hidden */
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Background circle */
+.circular-progress circle:nth-child(1) {
+  stroke: #e6e6e6; /* Background circle */
+}
+
+/* Progress circle (green) */
+.circular-progress circle:nth-child(2) {
+  stroke: #49c681; /* Progress color */
+}
+
+/* Outer meter circle (additional ring) */
+.circular-progress circle:nth-child(3) {
+  stroke: #86a996; /* Meter bar color */
+  stroke-width: 15; /* Outer meter bar thicker than the progress bar */
+}
+
+/* Center text displaying percentage */
+.circular-progress .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the percentage inside the circle */
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}

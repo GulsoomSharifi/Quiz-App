@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.container {
+  position: fixed; /* Fixes the container in place */
+  margin-top: 285px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  width: 100%;
+}
+
+.content {
+  background-color: transparent;
+  padding: 60px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 2.1rem;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.content h1 + h1 {
+  margin-top: -11px;
+}
+
+.content h1 span {
+  color: #00d8ff;
+  font-weight: bold;
+}
+
+.content h2 {
+  font-size: 1.7rem;
+  margin-top: 2px;
+}
+
+.buttons .btn {
+  text-decoration: none;
+  margin: 10px;
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box; /* Prevents box model issues */
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url("banner-img2.jpg") !important;
+  }
+  .buttons .btn {
+    width: 100%; /* Stacks buttons in a single column on smaller screens */
+  }
+
+  .container {
+    margin-top: 20px; /* Adjusts the top margin for mobile */
+    padding: 5px; /* Reduces padding for smaller screens */
+  }
+
+  .content {
+    padding: 10px; /* Reduces padding for smaller screens */
+  }
+  .content h2 {
+    font-size: 1rem;
+    margin-top: 2px;
+    font-weight: 800 !important;
+    color: #000 !important;
+  }
+  .content h1 {
+    font-size: 1.8rem;
+    color: #000;
+  }
+  .content h1:nth-child(1) {
+    padding-bottom: 15px;
+  }
+  .footer .womenhealth,
+  .footer .forbes,
+  .footer .mayo-clinic,
+  .footer .wall-street,
+  .footer .new-york-times,
+  .footer .vogue {
+    margin: 10px 5px; /* Increased spacing between footer items */
+  }
+}
+
+.btn-pink {
+  background-color: #ff69b4;
+}
+
+.btn-pink:hover {
+  background-color: #ff1493;
+}
+
+.btn-blue {
+  background-color: #4682b4;
+}
+
+.btn-blue:hover {
+  background-color: #5f9ea0;
+}
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(247, 238, 238, 0.8); /* Gray with 50% transparency */
+  display: flex;
+  flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+  justify-content: center; /* Centers footer items */
+  align-items: center;
+}
+
+.buttons .btn i {
+  position: absolute;
+  right: 20px;
+}
+
+.footer .womenhealth,
+.footer .forbes,
+.footer .mayo-clinic,
+.footer .wall-street,
+.footer .new-york-times,
+.footer .vogue {
+  margin: 19px 15px; /* Increased spacing between footer items */
+}
+
+.footer .womenhealth {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer .forbes {
+  color: rgb(16, 16, 20);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.footer .mayo-clinic {
+  color: #00274d; /* Dark Blue */
+  font-family: "Times New Roman", serif; /* Serif font */
+  font-size: 12px; /* Slightly larger text */
+  font-weight: bold; /* Makes it prominent */
+  letter-spacing: 1.5px; /* Adds spacing between letters */
+  text-transform: uppercase; /* Ensures all caps */
+  padding: 0 20px; /* Adjust spacing around text */
+}
+
+.footer .wall-street {
+  color: #383434;
+  text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 2.5; /* Increase text height */
+  letter-spacing: -0.5px; /* Decrease space between letters */
+}
+
+.footer .new-york-times {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer .vogue {
+  color: black;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: "fantasy";
+
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  footer .womenhealth,
+  footer .forbes,
+  footer .mayo-clinic,
+  footer .wall-street,
+  footer .new-york-times,
+  footer .vogue {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+/* Hide both views by default */
+.view {
+  display: none;
+}
+
+/* Show the mobile view for screen widths <= 768px */
+@media (max-width: 768px) {
+  #mobile-view {
+    display: block;
+  }
+}
+
+/* Show the desktop view for screen widths > 768px */
+@media (min-width: 769px) {
+  #desktop-view {
+    display: block;
+  }
+}
